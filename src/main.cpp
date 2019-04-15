@@ -50,6 +50,7 @@ int main()
             cout << "ERROR WRONG INPUT";
             return 0;
         }
+        cout << endl;
         draw(a);
         temp = a[move[7] - '1'][move[6] - 'a'];
         if (move[8] == '-') {
@@ -81,6 +82,7 @@ int main()
             cout << "ERROR WRONG INPUT";
             return 0;
         }
+        cout << endl;
         draw(a);
     }
     return 0;
