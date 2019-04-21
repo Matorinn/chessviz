@@ -1,2 +1,2 @@
-bin/chessviz
+bin/*
 build/*.o
