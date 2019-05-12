@@ -144,3 +144,38 @@ int queen(string move, char (&a)[8][8])
     draw(a);
     return 0;
 }
+
+int pawn(string move, char (&a)[8][8])
+{
+    char temp;
+    temp = a[move[1] - '1'][move[0] - 'a'];
+    if (move[2] == '-') {
+        if (a[move[4] - '1'][move[3] - 'a'] != ' '
+            || (a[move[1] - '1'][move[0] - 'a'] != 'p'
+                && a[move[1] - '1'][move[0] - 'a'] != 'P')
+            || (move[0] != move[3])
+            || ((abs((int)(move[1] - '1') - (int)(move[4] - '1'))) != 1
+                && (abs((int)(move[1] - '1') - (int)(move[4] - '1'))) != 2))
+        /*1 срубание в простой ход? 2 пешка ли? 3 ровность хода? 4 дальность
+           хода*/
+        {
+            cout << "ERROR WRONG INPUT\n";
+            return 1;
+        } else {
+            a[move[1] - '1'][move[0] - 'a'] = ' ';
+            a[move[4] - '1'][move[3] - 'a'] = temp;
+        }
+    } else if (move[2] == 'x') {
+        if (a[move[4] - '1'][move[3] - 'a'] == ' '
+            || (a[move[1] - '1'][move[0] - 'a'] != 'p'
+                && a[move[1] - '1'][move[0] - 'a'] != 'P')) {
+            cout << "ERROR WRONG INPUT\n";
+            return 1;
+        } else {
+            a[move[1] - '1'][move[0] - 'a'] = ' ';
+            a[move[4] - '1'][move[3] - 'a'] = temp;
+        }
+    }
+    draw(a);
+    return 0;
+}
