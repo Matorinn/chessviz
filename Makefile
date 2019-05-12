@@ -1,11 +1,13 @@
-.PHONY: all clean
+.PHONY: all clean remake
 
 way1=src/main.cpp
 way2=src/board_print_plain.cpp
 object1=build/main.o
 object2=build/board_print_plain.o
 
-all: bin/chessviz clean
+all: bin/chessviz
+
+remake: clean all
 
 bin/chessviz: $(object1) $(object2)
 	g++ $^ -o $@
