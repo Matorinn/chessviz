@@ -179,3 +179,43 @@ int pawn(string move, char (&a)[8][8])
     draw(a);
     return 0;
 }
+
+int knight(string move, char (&a)[8][8])
+{
+    char temp;
+    temp = a[move[2] - '1'][move[1] - 'a'];
+    if (move[3] == '-') {
+        if ((a[move[2] - '1'][move[1] - 'a'] != 'N'
+             && a[move[2] - '1'][move[1] - 'a'] != 'n')
+            || a[move[5] - '1'][move[4] - 'a'] != ' '
+            || (((abs((int)(move[2] - '1') - (int)(move[5] - '1')) != 2)
+                 || (abs((int)(move[1] - 'a') - (int)(move[4] - 'a')) != 1))
+                && ((abs((int)(move[2] - '1') - (int)(move[5] - '1')) != 1)
+                    || (abs((int)(move[1] - 'a') - (int)(move[4] - 'a'))
+                        != 2)))) {
+            cout << "WRONG INPUT\n";
+            return 1;
+        } else {
+            a[move[2] - '1'][move[1] - 'a'] = ' ';
+            a[move[5] - '1'][move[4] - 'a'] = temp;
+        }
+    }
+    if (move[3] == 'x') {
+        if ((a[move[2] - '1'][move[1] - 'a'] != 'N'
+             && a[move[2] - '1'][move[1] - 'a'] != 'n')
+            || a[move[5] - '1'][move[4] - 'a'] == ' '
+            || (((abs((int)(move[2] - '1') - (int)(move[5] - '1')) != 2)
+                 || (abs((int)(move[1] - 'a') - (int)(move[4] - 'a')) != 1))
+                && ((abs((int)(move[2] - '1') - (int)(move[5] - '1')) != 1)
+                    || (abs((int)(move[1] - 'a') - (int)(move[4] - 'a'))
+                        != 2)))) {
+            cout << "WRONG INPUT\n";
+            return 1;
+        } else {
+            a[move[2] - '1'][move[1] - 'a'] = ' ';
+            a[move[5] - '1'][move[4] - 'a'] = temp;
+        }
+    }
+    draw(a);
+    return 0;
+}
