@@ -55,6 +55,14 @@ TEST(MoveTest, Queentestfrst)
     EXPECT_EQ(1, code);
 }
 
+TEST(MoveTest, Queentestscnd)
+{
+    int code;
+    string returned = "Qd1-d4";
+    code = queen(returned, a);
+    EXPECT_EQ(0, code);
+}
+
 int main(int argc, char** argv)
 {
     ::testing::InitGoogleTest(&argc, argv);
