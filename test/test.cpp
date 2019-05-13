@@ -15,11 +15,43 @@ char a[8][8] = {{'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R'},
                 {'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p'},
                 {'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r'}};
 
-TEST(MoveTest, FirstMoveTest)
+TEST(MoveTest, Kingtestfrst)
 {
     int code;
-    std::string input = "Ke2-e4";
-    code = king(input, a);
+    string returned = "Kc2-e4";
+    code = king(returned, a);
+    EXPECT_EQ(1, code);
+}
+
+TEST(MoveTest, Kingtestscnd)
+{
+    int code;
+    string returned = "Ke1xe2";
+    code = king(returned, a);
+    EXPECT_EQ(0, code);
+}
+
+TEST(MoveTest, Rooktestfrst)
+{
+    int code;
+    string returned = "Rh1xh7";
+    code = rook(returned, a);
+    EXPECT_EQ(0, code);
+}
+
+TEST(MoveTest, Rooktestscnd)
+{
+    int code;
+    string returned = "Ra8-e4";
+    code = rook(returned, a);
+    EXPECT_EQ(1, code);
+}
+
+TEST(MoveTest, Queentestfrst)
+{
+    int code;
+    string returned = "Qd1-e3";
+    code = queen(returned, a);
     EXPECT_EQ(1, code);
 }
 
