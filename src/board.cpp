@@ -35,7 +35,6 @@ int king(string move, char (&a)[8][8])
             a[move[5] - '1'][move[4] - 'a'] = temp;
         }
     }
-    draw(a);
     return 0;
 }
 
@@ -69,7 +68,6 @@ int rook(string move, char (&a)[8][8])
             a[move[5] - '1'][move[4] - 'a'] = temp;
         }
     }
-    draw(a);
     return 0;
 }
 
@@ -103,7 +101,6 @@ int bishop(string move, char (&a)[8][8])
             a[move[5] - '1'][move[4] - 'a'] = temp;
         }
     }
-    draw(a);
     return 0;
 }
 
@@ -141,7 +138,6 @@ int queen(string move, char (&a)[8][8])
             a[move[5] - '1'][move[4] - 'a'] = temp;
         }
     }
-    draw(a);
     return 0;
 }
 
@@ -176,7 +172,6 @@ int pawn(string move, char (&a)[8][8])
             a[move[4] - '1'][move[3] - 'a'] = temp;
         }
     }
-    draw(a);
     return 0;
 }
 
@@ -216,6 +211,5 @@ int knight(string move, char (&a)[8][8])
             a[move[5] - '1'][move[4] - 'a'] = temp;
         }
     }
-    draw(a);
     return 0;
 }

@@ -40,6 +40,7 @@ int main()
             cout << "WRONG INPUT\n";
             return 1;
         }
+        draw(a);
     }
     return 0;
 }
